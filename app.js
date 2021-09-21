@@ -112,7 +112,7 @@ fs.mkdir('new folder', (err) => {
 //rmdir cant be used on a folder with something in it
 
 // read directory/folder
-const fs = require('fs')
+/*const fs = require('fs')
 fs.readdir('new folder', (err, array) => {
     if (err)
         console.log(err)
@@ -125,6 +125,15 @@ fs.readdir('new folder', (err, array) => {
                     console.log("deleted")
             })
         }
-})
+})*/
 
 //Tip:for..in will give indices and for..of will give values/content
+
+
+const fs = require('fs')
+const readstream = fs.createReadStream('./text.txt', 'utf8')
+const writestream = fs.createWriteStream('write.txt')
+//can also be used to create a new file like fs.writefile()
+readstream.on('data', (x) => {
+    writestream.write(x)
+})
