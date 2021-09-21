@@ -130,10 +130,20 @@ fs.readdir('new folder', (err, array) => {
 //Tip:for..in will give indices and for..of will give values/content
 
 
-const fs = require('fs')
+/*const fs = require('fs')
 const readstream = fs.createReadStream('./text.txt', 'utf8')
 const writestream = fs.createWriteStream('write.txt')
 //can also be used to create a new file like fs.writefile()
 readstream.on('data', (x) => {
     writestream.write(x)
-})
+})*/
+
+//same as above using pipe
+
+/*  const fs = require('fs')
+    const zlib = require('zlib')
+    const gzip = zlib.createGzip()
+    //To compress file
+    const readstream = fs.createReadStream('./read.txt', 'utf8')
+    const writestream = fs.createWriteStream('write.txt.gz')
+    readstream.pipe(gzip).pipe(writestream)*/
