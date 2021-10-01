@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: red;
+    height: 10vh;
+}
+header h1{
+    font-family: sans-serif;
+}
+li{
+    list-style:none;
+}

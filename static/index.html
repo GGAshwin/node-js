@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type="submit"] {
+        display: block;
+        padding: 10px;
+    }
+
+    body {
+        background-color: rgb(86, 173, 253);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+
+<body>
+    <form action="/" method="post" id="form">
+        <input type="email" name="email" id="email">
+        <input type="password" name="pass" id="pass">
+        <input type="submit" value="Submit">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
+            $(document).ready(() => {
+                $('#form').submit((e) => {
+                    e.preventDefault()
+                    $.ajax({
+                        url: '/',
+                        type: 'post',
+                        contentType: 'application/json',
+                        data: JSON.stringify($('#form').serializeArray()),
+                        success: (response) => {
+                            console.log('OK')
+                        }
+                    })
+                })
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Hello <%=person%>
+        </h1>
+    </header>
+    <h2>
+        This is the data we have on you:
+        <br>
+        Age:<%=data.age%>
+            <br>
+            Hobbies:
+            <ul>
+                <%data.hobbies.forEach(element=> {%>
+                    <li>
+                        <%=element%>
+                    </li>
+                    <% });%>
+            </ul>
+    </h2>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 /*Readline tutorial
+
 const readline = require('readline')
 const rl = readline.createInterface({
     input: process.stdin,
@@ -147,3 +148,12 @@ readstream.on('data', (x) => {
     const readstream = fs.createReadStream('./read.txt', 'utf8')
     const writestream = fs.createWriteStream('write.txt.gz')
     readstream.pipe(gzip).pipe(writestream)*/
+
+//demo for lodash framework
+
+/*const _ = require('./node_modules/lodash')
+let example = _.fill([1, 2, 3, 4, 5], 'apple', 1, 4)
+console.log(example)*/
+
+
+
