@@ -14,8 +14,9 @@ const express = require('express')
 const app = express()
 
 app.set('view engine', 'ejs')
+//middlewares
 //when someone/something uses 'assets' the following function will fire
-//node express.static takes care of the work for us
+//node express.static takes care of the work for us '/assets' matches the route and 'assets' matches the folder
 app.use('/assets', express.static('assets'))
 /*app.use('/assets', (req, res, next) => {
     console.log(req.url)
@@ -34,6 +35,10 @@ app.get('/profile/:name', (req, res) => {
     res.render('index', { person: req.params.name, data: data })
     //to send html file
     //res.sendFile(__dirname + '/static/index.html')
+})
+//query:as in profiles?name=property&name=property and so on
+app.get('/contact', (req, res) => {
+    res.render('contact', { res: req.query })
 })
 //const useRouter = require('./routes/users')
 
